@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scissor Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #choices {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .choice {
+            cursor: pointer;
+        }
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #name {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        #score {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stone Paper Scissor Game</h1>
+    <div id="name">
+        <div>
+            <img class="choice" src="images.jfif" alt="Stone" width="150" height="150">
+            <p id="stoneText">STONE</p>
+        </div>
+        <div>
+            <img class="choice" src="paper.jfif" alt="Paper" width="150" height="150">
+            <p id="paperText">PAPER</p>
+        </div>
+        <div>
+            <img class="choice" src="scissor.jfif" alt="Scissor" width="150" height="150">
+            <p id="scissorText">SCISSOR</p>
+        </div>
+    </div>
+    <div id="result"></div>
+    <div id="score">
+        <p>Your Score: <span id="userScore">0</span></p>
+        <p>CPU Score: <span id="cpuScore">0</span></p>
+    </div>
+
+    <script>
+        const choices = ['stone', 'paper', 'scissor'];
+        const choiceImgs = document.querySelectorAll('.choice');
+        const resultDisplay = document.getElementById('result');
+        let userScore = 0;
+        let cpuScore = 0;
+
+        choiceImgs.forEach(choiceImg => {
+            choiceImg.addEventListener('click', () => {
+                const userChoice = choiceImg.alt.toLowerCase();
+                const cpuChoice = choices[Math.floor(Math.random() * choices.length)];
+                const result = determineWinner(userChoice, cpuChoice);
+                resultDisplay.textContent = `You chose ${userChoice}, CPU chose ${cpuChoice}. ${result}`;
+                updateScore(result);
+            });
+        });
+
+        function determineWinner(user, cpu) {
+            if (user === cpu) return 'It\'s a tie!';
+            if ((user === 'stone' && cpu === 'scissor') ||
+                (user === 'paper' && cpu === 'stone') ||
+                (user === 'scissor' && cpu === 'paper')) {
+                userScore++;
+                return 'You win!';
+            } else {
+                cpuScore++;
+                return 'CPU wins!';
+            }
+        }
+
+        function updateScore(result) {
+    const userScoreDisplay = document.getElementById('userScore');
+    const cpuScoreDisplay = document.getElementById('cpuScore');
+    if (result === 'You win!') {
+        userScoreDisplay.textContent = userScore;
+        if (userScore >= 10) {
+            // Call a function to burst the firecrackers
+            burstFirecrackers();
+        }
+    } else if (result === 'CPU wins!') {
+        cpuScoreDisplay.textContent = cpuScore;
+    }
+}
+
+function burstFirecrackers() {
+  
+    document.body.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // Change background to red with some transparency
+    setTimeout(() => {
+        document.body.style.backgroundColor = ''; // Reset background color after a delay
+    }, 2000); // Change it back after 2 seconds (adjust as needed)
+}
+
+    </script>
+</body>
+</html>

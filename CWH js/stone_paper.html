@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    let user = prompt("Enter STONE(s) PAPER(p) SCISSOR(se)");
+    let cpuI = Math.floor(Math.random() * 3);
+
+    let cpu = ["S","P","SE"][cpuI];
+
+    const match = (cpu, user) => {
+        cpu = cpu.toUpperCase();
+        user = user.toUpperCase();
+        if (cpu == user) {
+            return 0;
+        } else if (cpu == "S" && user == "P") {
+            return "user";
+        } else if (cpu == "P" && user == "SE") {
+            return "user";
+        } else if (cpu == "SE" && user == "S") {
+            return "user";
+        } else if (cpu == "P" && user == "S") {
+            return "CPU";
+        } else if (cpu == "SE" && user == "P") {
+            return "CPU";
+        } else if (cpu == "S" && user == "SE") {
+            return "CPU";
+        }
+    }
+
+    let result = match(cpu, user);
+    document.write(`The winner is :- ${result}`);
+
+</script>
+
+</body>
+</html>

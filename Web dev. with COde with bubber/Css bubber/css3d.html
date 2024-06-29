@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container{
+            background-color:antiquewhite;
+            padding: 5rem;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 1rem;
+        }
+
+        .item{
+            padding: 2rem;
+            height: 150px;
+            width: 150px;
+            background-color: blue;
+            border: 2px solid black;
+        }
+
+        #rotate-x:hover{
+            transform: rotateX(45deg);
+        }
+
+        #rotate-y:hover{
+            transform: rotatey(45deg);
+        }
+
+        
+        #rotate-z:hover{
+            transform: rotateZ(45deg);
+        }
+
+        #translate-x:hover{
+            transform: translateX(100px);
+        }
+
+        #translate-y:hover{
+            transform: translateY(50px);
+        }
+
+        #translate-z:hover{
+            /* transform: translateZ(50px); //perspacive set */
+            transform:perspective(300px) translateZ(50px);
+        }
+
+        #scale-x:hover{
+            transform: scalex(1.5);
+        }
+
+        #scale-y:hover{
+            /* transform: scaley(1.5); */
+            transform: skewy(30deg);
+
+        }
+
+        #scale-z:hover{
+            transform: perspective(300px) scalez(5) rotateY(30deg);
+        }
+
+        
+        
+         
+        </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item" id="rotate-x">Rotate-x</div>
+        <div class="item" id="rotate-y">Rotate-y</div>
+        <div class="item" id="rotate-z">Rotate-z</div>
+        <div class="item" id="translate-x">Translate-x</div>
+        <div class="item" id="translate-y">Translate-y</div>
+        <div class="item" id="translate-z">Translate-z</div>
+        <div class="item" id="scale-x">scale-x</div>
+        <div class="item" id="scale-y">scale-y</div>
+        <div class="item" id="scale-z">scale-z</div>
+    </div>
+
+
+
+</body>
+</html>

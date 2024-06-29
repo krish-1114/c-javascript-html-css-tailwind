@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        nav {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: -250px; /* Initially hidden on the left side */
+            width: 250px;
+            height: 100%;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: 0.2s;
+        }
+
+        button {
+            position: fixed;
+            top: 20px;
+            right: 20px; /* Positioned on the right side */
+        }
+
+        /* Hover effect for navigation links */
+        nav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .show-nav {
+            left: 0;
+        }
+    </style>
+    <title>Navigation Bar</title>
+</head>
+<body>
+    <button id="toggleButton">Toggle Navigation</button>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleButton = document.getElementById("toggleButton");
+            const navbar = document.getElementById("navbar");
+
+            toggleButton.addEventListener("click", function() {
+                navbar.classList.toggle("show-nav");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+// map
+
+    let arr = [43,32,21]
+
+let a = arr.map((value)=>{
+        console.log(value)
+        return value + 1;
+})
+
+    console.log(a);
+    // console.log(arr);
+
+
+// filter
+
+let arr2 = [1,2,3,4,5,6,7,8,9,10]
+
+let a2 = arr2.filter((a)=>{
+    return a<5;
+})
+
+console.log(a2);
+
+//reduce
+
+let arr3 = [1,2,3,4,5,6,7,8,9,10]
+
+let a3 = arr3.reduce((h1,h2)=>{
+    return h1+h2;
+})
+
+console.log(a3);
+
+
+
+</script>
+
+</html>

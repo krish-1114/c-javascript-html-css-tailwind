@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .container{ 
+            height: 100%;
+            width: 100%;
+            background-color: brown;
+            display: grid;
+            padding: 4rem;
+            gap: 1rem;        
+            /* grid-template-columns: repeat(3,1fr); */
+            grid-template-areas: 
+            "header header header"
+            "sidebar con1 con1"
+            "sidebar con2 con3"
+            "footer footer footer"
+            ;
+        }
+
+        .item{
+            background-color: rgb(48, 100, 102);
+            border:3px solid rgb(24, 17, 17);
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        #header{
+            grid-area: header;
+        }
+        #sidebar{
+            grid-area: sidebar;
+        }
+        #con1{
+            grid-area: con1;
+        }
+        #con2{
+            grid-area: con2;
+        }
+        #con3{
+            grid-area: con3;
+        }
+        #footer{
+            grid-area: footer;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="item" id="header">Item1</div>
+        <div class="item" id="sidebar">Item2</div>
+        <div class="item" id="con1">Item3</div>
+        <div class="item" id="con2">Item4</div>
+        <div class="item" id="con3">Item5</div>
+        <div class="item" id="footer">Item6</div>
+        
+    </div>
+    
+</body>
+</html>

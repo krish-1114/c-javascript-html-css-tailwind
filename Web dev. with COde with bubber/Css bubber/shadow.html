@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        :root{
+            --ab1:black;
+            --abc:blue;
+        }
+
+
+        .con{
+            background-color: var(--abc);
+            height: 650px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center; 
+            align-items: center;  
+        }
+
+        .box{
+
+            --abc:brown;
+
+            background-color: green;
+            width: 340px;
+            height: 350px;
+            border: 1px solid var(--abc);
+            margin: 5px;
+            padding: 5px;
+            /* box-shadow: 5px 6px brown; */
+            /* box-shadow: 15px 6px 50px brown; */
+            /* box-shadow: 15px 6px 10px 5px black; */
+            /* box-shadow: inset 15px 6px 10px 5px black;  */
+            /* box-shadow: 5px 6px brown ,6px 50px green ; */
+
+        }
+
+        h2{
+            text-shadow: 0.4px 1px white,3px 3px blue,4px 4px yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="con">
+
+        <div class="box">
+        
+            <img src="3.jpg" alt="" width="300px">
+            <h2>Welcome Bro</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam tempore aut ullam architecto distinctio nobis natus a harum, quae autem unde praesentium facilis doloribus vero.</p>
+            
+        </div>
+
+    </div>
+
+
+</body>
+</html>

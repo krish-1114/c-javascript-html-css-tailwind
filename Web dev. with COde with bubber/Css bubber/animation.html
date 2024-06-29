@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0ch;
+            box-sizing: border-box;
+        }
+
+        .con {
+            width: 100vw;
+            height: 100vh;
+            background-color: aquamarine;
+            border: 1px solid black;
+        }
+
+        .box {
+            width: 300px;
+            height: 10px;
+            background-color: beige;
+            border-radius: 8px;
+            margin: 10px;
+            position: relative;
+            border: 1px solid yellow;
+            /* animation-name: rightmove ;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            /* animation-delay: 1s; */
+            /* animation-timing-function:linear ; */
+            /* animation-timing-function:ease-out ; */
+            /* animation-timing-function:cubic-bezier(0.01, 0.53, 0.99, 1.45) ;
+            animation-direction: alternate; */
+            /* animation-direction: reverse; */
+            /* animation-fill-mode: both; */
+            /* animation-fill-mode:backwards;  */
+
+            animation: 5s linear 1s infinite alternate none running rightmove;
+        }
+
+        @keyframes rightmove {
+
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+                top: 0;
+                left: 980px;
+            }
+
+        }
+
+        .box2 {
+            width: 300px;
+            height: 10px;
+            background-color: beige;
+            border-radius: 8px;
+            margin: 10px;
+            position: relative;
+            border: 1px solid yellow;
+            animation: 5s ease-in 1s infinite alternate none running rightmove1;
+
+        }
+
+
+        @keyframes rightmove1 {
+
+            from {
+                top: 460px;
+                left: 1000px;
+            }
+
+            to {
+                top: 500px;
+                left: 0;
+            }
+
+        }
+
+        .cir {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 3px aolid yellow;
+            border-radius: 360px;
+            margin: 10px;
+            position: relative;
+            top: 100px;
+            left: 640px;
+            animation: 5s ease-in-out 1s infinite alternate-reverse none running cirmove1;
+        }
+
+
+        @keyframes  cirmove1 {
+
+            0% {
+                top: 1px;
+                left: 5%;
+            }
+
+            30% {
+                top: 5%;
+                left: 90%;
+            }
+
+            60%{
+                top: 40%;
+                left:10%;
+            }
+
+            100%{
+                top: 45%;
+                left: 49%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="con">
+        <div class="box">
+
+        </div>
+        <div class="box2">
+
+        </div>
+        <div class="cir">
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
